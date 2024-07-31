@@ -3,45 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universal Package Demo</title>
+    <title>TypeScript WebSocket Client Local Test</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
+            margin: 0;
             padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         h1 {
-            color: #2c3e50;
+            color: #333;
         }
-        #result {
-            background-color: #f7f7f7;
+        #log {
+            background-color: #f8f8f8;
             border: 1px solid #ddd;
-            padding: 20px;
-            margin-top: 20px;
+            padding: 10px;
+            height: 400px;
+            overflow-y: scroll;
+            font-size: 13px;
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        a{
+            color: blue;
         }
     </style>
 </head>
 <body>
-<h1>Universal Package Demo</h1>
-<p>This is a demo of the @well-do-it-too/ts-websocket-client. It shows how the package can be used in a web environment.</p>
-<div id="result"></div>
+<div class="container">
+    <h1>TypeScript WebSocket Client</h1>
+    <div>
+        <button id="connectBtn">Connect</button>
+        <button id="disconnectBtn">Disconnect</button>
+        <button id="breakBtn">Break</button>
+    </div>
+    <div>
+        <input type="text" id="messageInput" placeholder="Enter message">
+        <button id="sendBtn">Send</button>
+    </div>
+    <h3>Log:</h3>
+    <div id="log"></div>
+    <pre>wss://echo.websocket.org</pre>
+    <a href="https://github.com/Well-do-it-too/ts-websocket-client" target="_blank"><small>https://github.com/Well-do-it-too/ts-websocket-client</small></a>
+    <br>
+    <a href="https://www.npmjs.com/package/@well-do-it-too/ts-websocket-client" target="_blank"><small>https://www.npmjs.com/package/@well-do-it-too/ts-websocket-client</small></a>
+</div>
 
 <script src="https://unpkg.com/@well-do-it-too/ts-websocket-client"></script>
 <script>
-    const resultDiv = document.getElementById('result');
-    const greeting = welldoittoo.greet('GitHub Pages');
-    const doubledNumber = welldoittoo.doubleNumber(100);
-    const name = welldoittoo.getMyName();
+    let client = new tsWebsocketClient.WebSocketClient({
+        connectionName: 'TestConnection',
+        url: 'wss://echo.websocket.org',
+        onConnection: function(info) { log('Connection', JSON.stringify(info)); },
+        onOpened: function(info) { log('Connected', JSON.stringify(info)); },
+        onClosed: function(info) { log('Disconnected', JSON.stringify(info)); },
+        onError: function(info) { log('Error', JSON.stringify(info)); },
+        onUpdate: function(data) { log('Received', data.data); }
+    });
 
-    resultDiv.innerHTML = `
-            <h2>Demo Results:</h2>
-            <p>${greeting}</p>
-            <p>Double of 100 is: ${doubledNumber}</p>
-            <p>Package name: ${name}</p>
-        `;
+    let connectBtn = document.getElementById('connectBtn');
+    let disconnectBtn = document.getElementById('disconnectBtn');
+    let breakBtn = document.getElementById('breakBtn');
+    let sendBtn = document.getElementById('sendBtn');
+    let messageInput = document.getElementById('messageInput');
+    let logDiv = document.getElementById('log');
+
+    function log(type, message) {
+        logDiv.innerHTML += '<b><u>' + type + ':</u></b> ';
+        logDiv.innerHTML += message + '<br>';
+        logDiv.scrollTop = logDiv.scrollHeight;
+    }
+
+    connectBtn.addEventListener('click', function() { client.open(); });
+    disconnectBtn.addEventListener('click', function() { client.close(); });
+    breakBtn.addEventListener('click', function() { client.breakConnection(); });
+    sendBtn.addEventListener('click', function() {
+        let message = messageInput.value;
+        if(!message) return;
+        client.sendMessage(message);
+        log('Sent', message);
+        messageInput.value = '';
+    });
 </script>
 </body>
 </html>
