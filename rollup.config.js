@@ -11,13 +11,13 @@ export default {
         {
             file: 'dist/index.js',
             format: 'umd',
-            name: 'welldoittoo',
+            name: 'tsWebsocketClient',
             sourcemap: true
         },
         {
             file: 'dist/index.min.js',
             format: 'umd',
-            name: 'welldoittoo',
+            name: 'tsWebsocketClient',
             sourcemap: true,
             plugins: [terser()]
         },
