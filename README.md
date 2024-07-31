@@ -8,6 +8,7 @@
 # TypeScript WebSocket Client
 
 A robust and flexible WebSocket client implementation in TypeScript, designed for use in React, Node.js, and web projects.
+Based on https://github.com/Well-do-it-too/ts-universal-package
 
 ![TypeScript WebSocket Client Logo](./assets/example.png)
 - [Demo](https://well-do-it-too.github.io/ts-websocket-client/)
