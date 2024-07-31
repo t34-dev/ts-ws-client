@@ -1,7 +1,7 @@
 {
   "name": "@well-do-it-too/ts-websocket-client",
   "version": "1.0.0",
-  "description": "A universal TypeScript package template for creating libraries compatible with React, Node.js, and web projects",
+  "description": "Robust TypeScript WebSocket client with auto-reconnection for React, Node.js, and web projects. Supports event handling and connection management.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.min.js",
@@ -51,7 +51,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/Well-do-it-too/ts-websocket-client#readme",
+  "homepage": "https://well-do-it-too.github.io/ts-websocket-client/",
   "devDependencies": {
     "@rollup/plugin-alias": "^5.1.0",
     "@rollup/plugin-commonjs": "^22.0.0",
