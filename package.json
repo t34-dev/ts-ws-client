@@ -1,6 +1,6 @@
 {
   "name": "@well-do-it-too/ts-websocket-client",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Robust TypeScript WebSocket client with auto-reconnection for React, Node.js, and web projects. Supports event handling and connection management.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
