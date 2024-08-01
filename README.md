@@ -4,13 +4,13 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Well-do-it-too/ts-websocket-client?v=1722420610)
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/Well-do-it-too/ts-websocket-client?sort=semver&style=flat&logo=git&logoColor=white&label=Latest%20Version&color=blue&v=1722511903)
 
-
 # TypeScript WebSocket Client
 
 A robust and flexible WebSocket client implementation in TypeScript, designed for use in React, Node.js, and web projects.
 Based on https://github.com/Well-do-it-too/ts-universal-package
 
 ![TypeScript WebSocket Client Logo](./assets/example.png)
+
 - [Demo](https://well-do-it-too.github.io/ts-websocket-client/)
 
 ## Features
@@ -116,7 +116,7 @@ const WebSocketComponent: React.FC = () => {
       onClosed: (info) => console.log('Disconnected:', info),
       onError: (info) => console.error('Error:', info),
       onUpdate: (info) => {
-        setMessages(prevMessages => [...prevMessages, info.data as string]);
+        setMessages((prevMessages) => [...prevMessages, info.data as string]);
       },
     });
 

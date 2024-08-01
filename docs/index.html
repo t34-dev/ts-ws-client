@@ -1,118 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TypeScript WebSocket Client Local Test</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #333;
-        }
-        #log {
-            background-color: #f8f8f8;
-            border: 1px solid #ddd;
-            padding: 10px;
-            height: 400px;
-            overflow-y: scroll;
-            font-size: 13px;
-        }
-        button {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        input[type="text"] {
-            width: 70%;
-            padding: 10px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        a{
-            color: blue;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+      }
+      #log {
+        background-color: #f8f8f8;
+        border: 1px solid #ddd;
+        padding: 10px;
+        height: 400px;
+        overflow-y: scroll;
+        font-size: 13px;
+      }
+      button {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+      input[type='text'] {
+        width: 70%;
+        padding: 10px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      a {
+        color: blue;
+      }
     </style>
-</head>
-<body>
-<div class="container">
-    <h1>TypeScript WebSocket Client</h1>
-    <div>
+  </head>
+  <body>
+    <div class="container">
+      <h1>TypeScript WebSocket Client</h1>
+      <div>
         <button id="connectBtn">Connect</button>
         <button id="disconnectBtn">Disconnect</button>
         <button id="breakBtn">Break</button>
-    </div>
-    <div>
-        <input type="text" id="messageInput" placeholder="Enter message">
+      </div>
+      <div>
+        <input type="text" id="messageInput" placeholder="Enter message" />
         <button id="sendBtn">Send</button>
+      </div>
+      <h3>Log:</h3>
+      <div id="log"></div>
+      <pre>wss://echo.websocket.org</pre>
+      <a href="https://github.com/Well-do-it-too/ts-websocket-client" target="_blank"
+        ><small>https://github.com/Well-do-it-too/ts-websocket-client</small></a
+      >
+      <br />
+      <a href="https://www.npmjs.com/package/@well-do-it-too/ts-websocket-client" target="_blank"
+        ><small>https://www.npmjs.com/package/@well-do-it-too/ts-websocket-client</small></a
+      >
     </div>
-    <h3>Log:</h3>
-    <div id="log"></div>
-    <pre>wss://echo.websocket.org</pre>
-    <a href="https://github.com/Well-do-it-too/ts-websocket-client" target="_blank"><small>https://github.com/Well-do-it-too/ts-websocket-client</small></a>
-    <br>
-    <a href="https://www.npmjs.com/package/@well-do-it-too/ts-websocket-client" target="_blank"><small>https://www.npmjs.com/package/@well-do-it-too/ts-websocket-client</small></a>
-</div>
 
-<script src="https://unpkg.com/@well-do-it-too/ts-websocket-client"></script>
-<script>
-    let client = new tsWebsocketClient.WebSocketClient({
+    <script src="https://unpkg.com/@well-do-it-too/ts-websocket-client"></script>
+    <script>
+      let client = new tsWebsocketClient.WebSocketClient({
         connectionName: 'TestConnection',
         url: 'wss://echo.websocket.org',
-        onConnection: function(info) { log('Connection', JSON.stringify(info)); },
-        onOpened: function(info) { log('Connected', JSON.stringify(info)); },
-        onClosed: function(info) { log('Disconnected', JSON.stringify(info)); },
-        onError: function(info) { log('Error', JSON.stringify(info)); },
-        onUpdate: function(data) { log('Received', data.data); }
-    });
+        onConnection: function (info) {
+          log('Connection', JSON.stringify(info));
+        },
+        onOpened: function (info) {
+          log('Connected', JSON.stringify(info));
+        },
+        onClosed: function (info) {
+          log('Disconnected', JSON.stringify(info));
+        },
+        onError: function (info) {
+          log('Error', JSON.stringify(info));
+        },
+        onUpdate: function (data) {
+          log('Received', data.data);
+        },
+      });
 
-    let connectBtn = document.getElementById('connectBtn');
-    let disconnectBtn = document.getElementById('disconnectBtn');
-    let breakBtn = document.getElementById('breakBtn');
-    let sendBtn = document.getElementById('sendBtn');
-    let messageInput = document.getElementById('messageInput');
-    let logDiv = document.getElementById('log');
+      let connectBtn = document.getElementById('connectBtn');
+      let disconnectBtn = document.getElementById('disconnectBtn');
+      let breakBtn = document.getElementById('breakBtn');
+      let sendBtn = document.getElementById('sendBtn');
+      let messageInput = document.getElementById('messageInput');
+      let logDiv = document.getElementById('log');
 
-    function log(type, message) {
+      function log(type, message) {
         logDiv.innerHTML += '<b><u>' + type + ':</u></b> ';
         logDiv.innerHTML += message + '<br>';
         logDiv.scrollTop = logDiv.scrollHeight;
-    }
+      }
 
-    connectBtn.addEventListener('click', function() { client.open(); });
-    disconnectBtn.addEventListener('click', function() { client.close(); });
-    breakBtn.addEventListener('click', function() { client.breakConnection(); });
-    sendBtn.addEventListener('click', function() {
+      connectBtn.addEventListener('click', function () {
+        client.open();
+      });
+      disconnectBtn.addEventListener('click', function () {
+        client.close();
+      });
+      breakBtn.addEventListener('click', function () {
+        client.breakConnection();
+      });
+      sendBtn.addEventListener('click', function () {
         let message = messageInput.value;
-        if(!message) return;
+        if (!message) return;
         client.sendMessage(message);
         log('Sent', message);
         messageInput.value = '';
-    });
-</script>
-</body>
+      });
+    </script>
+  </body>
 </html>
