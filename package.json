@@ -39,7 +39,7 @@
   "engines": {
     "node": ">= 18 < 21"
   },
-  "author": "Vitalii Rozhkov <welldoittoo@gmail.com>",
+  "author": "Vitalii Rozhkov <t34.dev@gmail.com>",
   "license": "ISC",
   "repository": {
     "type": "git",
