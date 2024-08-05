@@ -1,8 +1,8 @@
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue?logo=typescript&ver=1722420610)
-![Node.js](https://img.shields.io/badge/Node.js-%3E%3D20-green?logo=node.js&ver=1722420610)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/t34-dev/ts-websocket-client?ver=1722420610)
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/t34-dev/ts-websocket-client?sort=semver&style=flat&logo=git&logoColor=white&label=Latest%20Version&color=blue&ver=1722420610)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue?logo=typescript&ver=1722867874)
+![Node.js](https://img.shields.io/badge/Node.js-%3E%3D20-green?logo=node.js&ver=1722867874)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/t34-dev/ts-websocket-client?ver=1722867874)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/t34-dev/ts-websocket-client?sort=semver&style=flat&logo=git&logoColor=white&label=Latest%20Version&color=blue&ver=1722867874)
 
 # TypeScript WebSocket Client
 
