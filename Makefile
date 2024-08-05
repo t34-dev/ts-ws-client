@@ -2,7 +2,7 @@
 include .make/tag.mk
 
 # Application name
-APP_NAME := ts-websocket-client
+APP_NAME := ts-ws-client
 
 # Set default target to help
 .DEFAULT_GOAL := help

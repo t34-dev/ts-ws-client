@@ -1,5 +1,5 @@
 {
-  "name": "@t34-dev/ts-websocket-client",
+  "name": "@t34-dev/ts-ws-client",
   "version": "1.1.0",
   "description": "Robust TypeScript WebSocket client with auto-reconnection for React, Node.js, and web projects. Supports event handling and connection management.",
   "main": "dist/index.js",
@@ -43,15 +43,15 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/t34-dev/ts-websocket-client.git"
+    "url": "https://github.com/t34-dev/ts-ws-client.git"
   },
   "bugs": {
-    "url": "https://github.com/t34-dev/ts-websocket-client/issues"
+    "url": "https://github.com/t34-dev/ts-ws-client/issues"
   },
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://t34-dev.github.io/ts-websocket-client/",
+  "homepage": "https://t34-dev.github.io/ts-ws-client/",
   "devDependencies": {
     "@rollup/plugin-alias": "^5.1.0",
     "@rollup/plugin-commonjs": "^22.0.0",
