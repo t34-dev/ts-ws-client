@@ -1,17 +1,17 @@
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue?logo=typescript&v=1722517843)
-![Node.js](https://img.shields.io/badge/Node.js-%3E%3D20-green?logo=node.js&v=1722517843)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/Well-do-it-too/ts-websocket-client?v=1722420610)
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/Well-do-it-too/ts-websocket-client?sort=semver&style=flat&logo=git&logoColor=white&label=Latest%20Version&color=blue&v=1722517843)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue?logo=typescript&ver=1722420610)
+![Node.js](https://img.shields.io/badge/Node.js-%3E%3D20-green?logo=node.js&ver=1722420610)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/t34-dev/ts-websocket-client?ver=1722420610)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/t34-dev/ts-websocket-client?sort=semver&style=flat&logo=git&logoColor=white&label=Latest%20Version&color=blue&ver=1722420610)
 
 # TypeScript WebSocket Client
 
 A robust and flexible WebSocket client implementation in TypeScript, designed for use in React, Node.js, and web projects.
-Based on https://github.com/Well-do-it-too/ts-universal-package
+Based on https://github.com/t34-dev/ts-universal-package
 
 ![TypeScript WebSocket Client Logo](./assets/example.png)
 
-- [Demo](https://well-do-it-too.github.io/ts-websocket-client/)
+- [Demo](https://t34-dev.github.io/ts-websocket-client/)
 
 ## Features
 
@@ -25,13 +25,13 @@ Based on https://github.com/Well-do-it-too/ts-universal-package
 ## Installation
 
 ```bash
-npm install @well-do-it-too/ts-websocket-client
+npm install @t34-dev/ts-websocket-client
 ```
 
 or
 
 ```bash
-yarn add @well-do-it-too/ts-websocket-client
+yarn add @t34-dev/ts-websocket-client
 ```
 
 ## Usage
@@ -41,7 +41,7 @@ yarn add @well-do-it-too/ts-websocket-client
 Here's a basic example of how to use the WebSocket client:
 
 ```typescript
-import { WebSocketClient } from '@well-do-it-too/ts-websocket-client';
+import { WebSocketClient } from '@t34-dev/ts-websocket-client';
 
 const client = new WebSocketClient({
   connectionName: 'MyConnection',
@@ -67,7 +67,7 @@ client.close();
 Here's an example of how to use the WebSocket client in a Node.js environment:
 
 ```typescript
-import { WebSocketClient } from '@well-do-it-too/ts-websocket-client';
+import { WebSocketClient } from '@t34-dev/ts-websocket-client';
 
 const client = new WebSocketClient({
   connectionName: 'NodeConnection',
@@ -101,7 +101,7 @@ Here's an example of how to use the WebSocket client in a React component:
 
 ```tsx
 import React, { useEffect, useState } from 'react';
-import { WebSocketClient } from '@well-do-it-too/ts-websocket-client';
+import { WebSocketClient } from '@t34-dev/ts-websocket-client';
 
 const WebSocketComponent: React.FC = () => {
   const [client, setClient] = useState<WebSocketClient | null>(null);
@@ -194,10 +194,10 @@ This project is licensed under the ISC License.
 
 ## Links
 
-- [GitHub Repository](https://github.com/Well-do-it-too/ts-websocket-client)
-- [npm Package](https://www.npmjs.com/package/@well-do-it-too/ts-websocket-client)
-- [Demo](https://well-do-it-too.github.io/ts-websocket-client/)
+- [GitHub Repository](https://github.com/t34-dev/ts-websocket-client)
+- [npm Package](https://www.npmjs.com/package/@t34-dev/ts-websocket-client)
+- [Demo](https://t34-dev.github.io/ts-websocket-client/)
 
 ---
 
-Developed with ❤️ by [Well-do-it-too](https://github.com/Well-do-it-too)
+Developed with ❤️ by [T34](https://github.com/t34-dev)
